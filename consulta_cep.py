@@ -35,10 +35,11 @@ while True:
         if not cep_valido(cep):
             print("CEP inválido! Digite 8 números, sem espaços ou traços.")
             continue
+        
+        dados = consultar_cep(cep)
         if dados.get("erro"):
             print("CEP não encontrado.")
             continue
-        dados = consultar_cep(cep)
         exibir_endereco(dados)
         historico.append(dados)
 
