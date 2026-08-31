@@ -46,17 +46,11 @@ while True:
     elif opcao == "3":
         print("Até logo!")
         break
-    print("1 - Buscar um CEP")
-    print("2 - Ver histórico de buscas")
-    print("3 - Salvar histórico em arquivo")
-    print("4 - Sair")
-    opcao = input("Escolha uma opção: ")
-
     elif opcao == "3":
-    with open("historico.json", "w") as arquivo:
-        json.dump(historico, arquivo, indent=2, ensure_ascii=False)
-    print("Histórico salvo em historico.json!")
+        with open("historico.json", "w") as arquivo:
+            json.dump(historico, arquivo, indent=2, ensure_ascii=False)
+        print("Histórico salvo em historico.json!")
 
     elif opcao == "4":
-    print("Até logo!")
+     print("Até logo!")
     break
