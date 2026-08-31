@@ -1,4 +1,5 @@
 # consulta_cep.py
+import json
 import requests
 historico = []
 
@@ -45,5 +46,17 @@ while True:
     elif opcao == "3":
         print("Até logo!")
         break
-    else:
-        print("Opção inválida.")
+    print("1 - Buscar um CEP")
+    print("2 - Ver histórico de buscas")
+    print("3 - Salvar histórico em arquivo")
+    print("4 - Sair")
+    opcao = input("Escolha uma opção: ")
+
+    elif opcao == "3":
+    with open("historico.json", "w") as arquivo:
+        json.dump(historico, arquivo, indent=2, ensure_ascii=False)
+    print("Histórico salvo em historico.json!")
+
+    elif opcao == "4":
+    print("Até logo!")
+    break
